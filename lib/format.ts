@@ -1,20 +1,36 @@
-import moment from "moment";
+// Pass 3: moment.js (~70 KB min+gzip) replaced with the platform's Intl
+// APIs — zero bundle cost, same output. Formatters are hoisted so they're
+// constructed once, not per call (Intl constructors are expensive).
+const dateFormat = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
 
-// Baseline: moment.js is pulled into the client bundle just to format
-// dates and currency — ~70 KB min+gzip for what Intl does natively.
+const monthFormat = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  year: "2-digit",
+  timeZone: "UTC",
+});
+
+const currencyFormat = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
+
 export function formatDate(iso: string): string {
-  return moment(iso).format("MMM D, YYYY");
+  return dateFormat.format(new Date(iso));
 }
 
 export function formatMonth(iso: string): string {
-  return moment(iso).format("MMM YY");
+  return monthFormat.format(new Date(iso));
 }
 
 export function monthKey(iso: string): string {
-  return moment(iso).format("YYYY-MM");
+  return iso.slice(0, 7); // "YYYY-MM" straight from the ISO string
 }
 
 export function formatCurrency(amount: number): string {
-  const sign = amount < 0 ? "-" : "";
-  return `${sign}$${Math.abs(amount).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  return currencyFormat.format(amount);
 }

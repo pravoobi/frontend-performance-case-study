@@ -5,6 +5,7 @@
 // (Still naive on purpose: full 10k fetch, every row mounted, aggressive
 // re-renders — addressed in later passes.)
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import {
   Card,
   CardContent,
@@ -16,7 +17,16 @@ import {
 import { Search } from "lucide-react";
 import type { Transaction } from "@/lib/transactions";
 import { TransactionsTable } from "@/components/dashboard/TransactionsTable";
-import { TransactionDrawer } from "@/components/dashboard/TransactionDrawer";
+
+// Pass 3: the drawer (Radix Dialog + detail view) is loaded on demand — its
+// chunk is only fetched the first time a row is opened.
+const TransactionDrawer = dynamic(
+  () =>
+    import("@/components/dashboard/TransactionDrawer").then(
+      (m) => m.TransactionDrawer,
+    ),
+  { ssr: false },
+);
 
 const CATEGORY_OPTIONS = [
   { value: "all", label: "All categories" },
@@ -114,10 +124,12 @@ export function TransactionsSection() {
         </CardContent>
       </Card>
 
-      <TransactionDrawer
-        transaction={selected}
-        onClose={() => setSelected(null)}
-      />
+      {selected && (
+        <TransactionDrawer
+          transaction={selected}
+          onClose={() => setSelected(null)}
+        />
+      )}
     </>
   );
 }

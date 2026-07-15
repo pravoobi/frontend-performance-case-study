@@ -1,0 +1,12 @@
+diff --git a/package.json b/package.json
+index 441531514d4cba9cc0146534ce5967b7f0212444..f6467311fd8c307c12089491e647736deebd99b1 100644
+--- a/package.json
++++ b/package.json
+@@ -80,5 +80,6 @@
+     "vite-plugin-dts": "^5.0.0",
+     "vitest": "^4.1.6",
+     "vitest-axe": "^0.1.0"
+-  }
++  },
++  "sideEffects": false
+ }

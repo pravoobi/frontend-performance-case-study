@@ -4,3 +4,5 @@ allowBuilds:
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+patchedDependencies:
+  '@practics/ui': patches/@practics__ui.patch

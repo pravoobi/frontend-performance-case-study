@@ -1,11 +1,9 @@
-import groupBy from "lodash/groupBy";
-import sumBy from "lodash/sumBy";
-import orderBy from "lodash/orderBy";
 import type { Transaction } from "./transactions";
 import { formatMonth, monthKey } from "./format";
 
-// Pass 2: aggregates moved out of the client render path — they run on the
-// server (at build time, since the dataset is deterministic).
+// Server-side aggregates (run at build time — the dataset is deterministic).
+// Pass 3: lodash groupBy/sumBy/orderBy replaced with single-pass native
+// reductions so lodash can leave the dependency tree entirely.
 
 export interface Stats {
   income: number;
@@ -15,44 +13,47 @@ export interface Stats {
 }
 
 export function computeStats(transactions: Transaction[]): Stats {
-  const income = sumBy(
-    transactions.filter((t) => t.amount > 0),
-    "amount",
-  );
-  const spend = -sumBy(
-    transactions.filter((t) => t.amount < 0),
-    "amount",
-  );
+  let income = 0;
+  let spend = 0;
+  for (const t of transactions) {
+    if (t.amount > 0) income += t.amount;
+    else spend -= t.amount;
+  }
   const net = income - spend;
   return {
     income,
     spend,
     net,
-    savingsRate: income > 0 ? ((income - spend) / income) * 100 : 0,
+    savingsRate: income > 0 ? (net / income) * 100 : 0,
   };
 }
 
 export function monthlySeries(transactions: Transaction[]) {
-  const byMonth = groupBy(transactions, (t) => monthKey(t.date));
-  return orderBy(Object.entries(byMonth), ([key]) => key).map(([key, txns]) => ({
-    month: formatMonth(txns[0].date),
-    key,
-    spend: Math.round(-sumBy(txns.filter((t) => t.amount < 0), "amount")),
-    income: Math.round(sumBy(txns.filter((t) => t.amount > 0), "amount")),
-  }));
+  const byMonth = new Map<string, { date: string; spend: number; income: number }>();
+  for (const t of transactions) {
+    const key = monthKey(t.date);
+    const bucket = byMonth.get(key) ?? { date: t.date, spend: 0, income: 0 };
+    if (t.amount > 0) bucket.income += t.amount;
+    else bucket.spend -= t.amount;
+    byMonth.set(key, bucket);
+  }
+  return [...byMonth.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([key, bucket]) => ({
+      month: formatMonth(bucket.date),
+      key,
+      spend: Math.round(bucket.spend),
+      income: Math.round(bucket.income),
+    }));
 }
 
 export function categoryTotals(transactions: Transaction[]) {
-  const byCategory = groupBy(
-    transactions.filter((t) => t.amount < 0),
-    "category",
-  );
-  return orderBy(
-    Object.entries(byCategory).map(([category, txns]) => ({
-      category,
-      total: Math.round(-sumBy(txns, "amount")),
-    })),
-    "total",
-    "desc",
-  );
+  const byCategory = new Map<string, number>();
+  for (const t of transactions) {
+    if (t.amount >= 0) continue;
+    byCategory.set(t.category, (byCategory.get(t.category) ?? 0) - t.amount);
+  }
+  return [...byCategory.entries()]
+    .map(([category, total]) => ({ category, total: Math.round(total) }))
+    .sort((a, b) => b.total - a.total);
 }

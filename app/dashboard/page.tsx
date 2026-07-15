@@ -22,9 +22,16 @@ import {
 import { generateTransactions } from "@/lib/transactions";
 import { categoryTotals, computeStats, monthlySeries } from "@/lib/aggregate";
 import { formatCurrency } from "@/lib/format";
+import { TransactionsSection } from "@/components/dashboard/TransactionsSection";
+// Note: the charts are NOT dynamic()-imported, deliberately. They render
+// above the fold on initial load, so code-splitting them buys nothing —
+// and measurably hurts: the split chunk landed in the shared chunk group
+// (recharts started loading on the landing page too) and its delayed
+// hydration forced a layout pass after the 10k-row table had mounted,
+// adding a multi-second long task. Split what loads on interaction (the
+// drawer); keep what renders immediately in the route bundle.
 import { SpendingChart } from "@/components/dashboard/SpendingChart";
 import { CategoryChart } from "@/components/dashboard/CategoryChart";
-import { TransactionsSection } from "@/components/dashboard/TransactionsSection";
 
 export const metadata = {
   title: "Dashboard — FinDash",

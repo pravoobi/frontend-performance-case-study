@@ -278,5 +278,174 @@
         ]
       }
     }
+  },
+  "pass-3-bundle": {
+    "measuredAt": "2026-07-15T17:22:03.334Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 76,
+          "fcpMs": 2790.1,
+          "lcpMs": 4979.3,
+          "tbtMs": 70,
+          "cls": 0.0004,
+          "speedIndexMs": 3165.5,
+          "ttfbMs": 9,
+          "jsTransferKb": 397.8,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 737.9
+        },
+        "runs": [
+          {
+            "score": 76,
+            "fcpMs": 2791.79895,
+            "lcpMs": 4962.337125,
+            "tbtMs": 70,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 3165.4760492182913,
+            "ttfbMs": 13,
+            "jsTransferKb": 397.8017578125,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 737.8681640625
+          },
+          {
+            "score": 73,
+            "fcpMs": 2790.13165,
+            "lcpMs": 4979.28745,
+            "tbtMs": 226.39449999999988,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 3260.0322543198295,
+            "ttfbMs": 9,
+            "jsTransferKb": 397.8154296875,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 737.8818359375
+          },
+          {
+            "score": 77,
+            "fcpMs": 2787.4054,
+            "lcpMs": 5015.3532000000005,
+            "tbtMs": 48,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 3128.88029388398,
+            "ttfbMs": 8,
+            "jsTransferKb": 397.8212890625,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 737.8876953125
+          }
+        ]
+      },
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 26,
+          "fcpMs": 8281.9,
+          "lcpMs": 13838.3,
+          "tbtMs": 4585.6,
+          "cls": 0,
+          "speedIndexMs": 10162.9,
+          "ttfbMs": 4,
+          "jsTransferKb": 397.8,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2291.4
+        },
+        "runs": [
+          {
+            "score": 26,
+            "fcpMs": 8538.587,
+            "lcpMs": 13838.274000000001,
+            "tbtMs": 4585.600000000002,
+            "cls": 0,
+            "speedIndexMs": 10218.176339728947,
+            "ttfbMs": 4,
+            "jsTransferKb": 397.818359375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2291.4033203125
+          },
+          {
+            "score": 26,
+            "fcpMs": 8281.89385,
+            "lcpMs": 13891.274450000004,
+            "tbtMs": 4577.2883,
+            "cls": 0,
+            "speedIndexMs": 10162.89037708287,
+            "ttfbMs": 5,
+            "jsTransferKb": 397.798828125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2291.3837890625
+          },
+          {
+            "score": 50,
+            "fcpMs": 2786.2776,
+            "lcpMs": 4424.1366,
+            "tbtMs": 7287.653,
+            "cls": 0.0000982653171931605,
+            "speedIndexMs": 3022.600616015012,
+            "ttfbMs": 4,
+            "jsTransferKb": 397.8134765625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2291.3984375
+          }
+        ]
+      }
+    }
+  },
+  "bisect-nopatch": {
+    "measuredAt": "2026-07-15T17:07:01.068Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 57,
+          "fcpMs": 2853.1,
+          "lcpMs": 5577,
+          "tbtMs": 642.5,
+          "cls": 0,
+          "speedIndexMs": 4912.4,
+          "ttfbMs": 20,
+          "jsTransferKb": 407.8,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 748
+        },
+        "runs": [
+          {
+            "score": 63,
+            "fcpMs": 2843.68185,
+            "lcpMs": 4491.8234250000005,
+            "tbtMs": 642.4955749999999,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 2871.767032550595,
+            "ttfbMs": 160,
+            "jsTransferKb": 407.775390625,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 748.0361328125
+          },
+          {
+            "score": 57,
+            "fcpMs": 2955.81445,
+            "lcpMs": 5576.968125,
+            "tbtMs": 566.971,
+            "cls": 0,
+            "speedIndexMs": 4968.133369553996,
+            "ttfbMs": 20,
+            "jsTransferKb": 407.78125,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 748.0419921875
+          },
+          {
+            "score": 50,
+            "fcpMs": 2853.0859500000006,
+            "lcpMs": 5757.127675000001,
+            "tbtMs": 937,
+            "cls": 0,
+            "speedIndexMs": 4912.447992891053,
+            "ttfbMs": 13,
+            "jsTransferKb": 407.779296875,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 748.0400390625
+          }
+        ]
+      }
+    }
   }
 }
