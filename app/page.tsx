@@ -1,65 +1,263 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+// Baseline: the entire marketing page is a client component even though
+// nothing on it needs interactivity beyond plain links.
+import Link from "next/link";
+import { Badge, Button, Card, CardContent } from "@practics/ui";
+import { ArrowRight, ShieldCheck, Zap, LineChart } from "lucide-react";
+
+const FEATURES = [
+  {
+    title: "Spending insights",
+    body: "Every transaction categorized automatically, with trends that surface where your money actually goes.",
+    image: "/images/feature-insights.png",
+    icon: <LineChart className="h-5 w-5" />,
+  },
+  {
+    title: "Budgets that adapt",
+    body: "Set monthly targets per category and let FinDash rebalance them as your habits change.",
+    image: "/images/feature-budgets.png",
+    icon: <Zap className="h-5 w-5" />,
+  },
+  {
+    title: "Real-time alerts",
+    body: "Get notified the second a charge looks off — duplicate, oversized, or from a new merchant.",
+    image: "/images/feature-alerts.png",
+    icon: <ShieldCheck className="h-5 w-5" />,
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    name: "Maya Chen",
+    role: "Freelance designer",
+    quote:
+      "FinDash caught a duplicate subscription within a week. It paid for itself before the trial ended.",
+    avatar: "/images/avatar-1.jpg",
+  },
+  {
+    name: "Devon Park",
+    role: "Engineering manager",
+    quote:
+      "The first finance app where the dashboard loads faster than my banking app's splash screen.",
+    avatar: "/images/avatar-2.jpg",
+  },
+  {
+    name: "Sofia Alvarez",
+    role: "Small business owner",
+    quote:
+      "I reconcile three accounts in one view. Month-end used to take an evening; now it takes coffee.",
+    avatar: "/images/avatar-3.jpg",
+  },
+];
+
+const STATS = [
+  { value: "120k+", label: "accounts connected" },
+  { value: "$2.4B", label: "transactions tracked" },
+  { value: "18%", label: "avg. monthly savings found" },
+  { value: "4.9/5", label: "app store rating" },
+];
+
+export default function LandingPage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main>
+      {/* Nav */}
+      <header className="border-b border-border">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <span className="font-display text-xl font-bold text-primary">
+            FinDash
+          </span>
+          <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+            <a href="#features" className="hover:text-foreground">
+              Features
+            </a>
+            <a href="#preview" className="hover:text-foreground">
+              Product
+            </a>
+            <a href="#testimonials" className="hover:text-foreground">
+              Customers
+            </a>
+          </nav>
+          <Link href="/dashboard">
+            <Button iconRight={<ArrowRight className="h-4 w-4" />}>
+              Open dashboard
+            </Button>
+          </Link>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-12 text-center">
+        <Badge variant="secondary" className="mb-6">
+          Now syncing 12,000+ banks
+        </Badge>
+        <h1 className="font-display mx-auto max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl">
+          All your money, one dashboard
+        </h1>
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+          FinDash pulls every account, card and investment into a single
+          real-time view — so you always know where you stand.
+        </p>
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <Link href="/dashboard">
+            <Button size="lg">Get started free</Button>
+          </Link>
+          <a href="#preview">
+            <Button size="lg" variant="outline">
+              See it in action
+            </Button>
+          </a>
+        </div>
+        {/* Baseline: full-resolution 3200×2000 PNG served as-is, no width/
+            height attributes (layout shift), no lazy-loading, no priority. */}
+        <img
+          src="/images/hero.png"
+          alt="FinDash dashboard overview"
+          className="mt-14 w-full rounded-2xl border border-border shadow-2xl"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+      </section>
+
+      {/* Stats band */}
+      <section className="border-y border-border bg-secondary">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 py-12 md:grid-cols-4">
+          {STATS.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p className="font-display text-3xl font-bold text-primary">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      {/* Features */}
+      <section id="features" className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="font-display text-center text-3xl font-bold sm:text-4xl">
+          Built for people who hate spreadsheets
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
+          Three things FinDash does better than your bank&apos;s app.
+        </p>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {FEATURES.map((feature) => (
+            <Card key={feature.title} className="overflow-hidden">
+              <img
+                src={feature.image}
+                alt={feature.title}
+                className="w-full object-cover"
+              />
+              <CardContent className="p-6">
+                <div className="mb-3 inline-flex rounded-lg bg-accent p-2 text-accent-foreground">
+                  {feature.icon}
+                </div>
+                <h3 className="font-display text-lg font-semibold">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {feature.body}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Product preview */}
+      <section id="preview" className="bg-secondary py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <h2 className="font-display text-3xl font-bold sm:text-4xl">
+                Your finances, at a glance
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Ten thousand transactions, six accounts, one screen. Filter by
+                category, search any merchant, and drill into any charge in a
+                click.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm">
+                {[
+                  "Live cash-flow chart across all accounts",
+                  "Category breakdown with month-over-month deltas",
+                  "Instant search over your full history",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-success" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/dashboard" className="mt-8 inline-block">
+                <Button iconRight={<ArrowRight className="h-4 w-4" />}>
+                  Explore the dashboard
+                </Button>
+              </Link>
+            </div>
+            <img
+              src="/images/app-preview.png"
+              alt="FinDash transactions view"
+              className="w-full rounded-2xl border border-border shadow-xl"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials" className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="font-display text-center text-3xl font-bold sm:text-4xl">
+          Loved by people with complicated money
+        </h2>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {TESTIMONIALS.map((testimonial) => (
+            <Card key={testimonial.name}>
+              <CardContent className="p-6">
+                <p className="text-sm leading-relaxed">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <div className="mt-6 flex items-center gap-3">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="h-10 w-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-sm font-semibold">{testimonial.name}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-primary">
+        <div className="mx-auto max-w-6xl px-6 py-16 text-center">
+          <h2 className="font-display text-3xl font-bold text-primary-foreground sm:text-4xl">
+            Take control of your money today
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
+            Free for personal use. Connect your first account in under two
+            minutes.
+          </p>
+          <Link href="/dashboard" className="mt-8 inline-block">
+            <Button size="lg" variant="secondary">
+              Open the dashboard
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      <footer className="border-t border-border">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8 text-sm text-muted-foreground">
+          <span>© 2026 FinDash. A performance case study.</span>
+          <span>Built with Next.js + @practics/ui</span>
+        </div>
+      </footer>
+    </main>
   );
 }
