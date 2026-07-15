@@ -1,7 +1,25 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { WebVitals } from "@/components/WebVitals";
+
+// Pass 5: fonts are self-hosted via next/font — subsetted woff2 served
+// from our own origin with a preload link, font-display: swap, and a
+// size-adjusted fallback font so the swap doesn't shift layout. No more
+// render-blocking stylesheet from fonts.googleapis.com.
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+  variable: "--font-sora",
+});
 
 export const metadata: Metadata = {
   title: "FinDash — All your money, one dashboard",
@@ -15,15 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        {/* Baseline: render-blocking webfont stylesheets from a CDN, no
-            preconnect, no font-display strategy. */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800"
-        />
-      </head>
+    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <body className="antialiased">
         <WebVitals />
         {children}
