@@ -3,26 +3,35 @@
 // Baseline: the entire marketing page is a client component even though
 // nothing on it needs interactivity beyond plain links.
 import Link from "next/link";
+import Image from "next/image";
 import { Badge, Button, Card, CardContent } from "@practics/ui";
 import { ArrowRight, ShieldCheck, Zap, LineChart } from "lucide-react";
+import heroImage from "@/public/images/hero.png";
+import appPreviewImage from "@/public/images/app-preview.png";
+import featureInsights from "@/public/images/feature-insights.png";
+import featureBudgets from "@/public/images/feature-budgets.png";
+import featureAlerts from "@/public/images/feature-alerts.png";
+import avatar1 from "@/public/images/avatar-1.jpg";
+import avatar2 from "@/public/images/avatar-2.jpg";
+import avatar3 from "@/public/images/avatar-3.jpg";
 
 const FEATURES = [
   {
     title: "Spending insights",
     body: "Every transaction categorized automatically, with trends that surface where your money actually goes.",
-    image: "/images/feature-insights.png",
+    image: featureInsights,
     icon: <LineChart className="h-5 w-5" />,
   },
   {
     title: "Budgets that adapt",
     body: "Set monthly targets per category and let FinDash rebalance them as your habits change.",
-    image: "/images/feature-budgets.png",
+    image: featureBudgets,
     icon: <Zap className="h-5 w-5" />,
   },
   {
     title: "Real-time alerts",
     body: "Get notified the second a charge looks off — duplicate, oversized, or from a new merchant.",
-    image: "/images/feature-alerts.png",
+    image: featureAlerts,
     icon: <ShieldCheck className="h-5 w-5" />,
   },
 ];
@@ -33,21 +42,21 @@ const TESTIMONIALS = [
     role: "Freelance designer",
     quote:
       "FinDash caught a duplicate subscription within a week. It paid for itself before the trial ended.",
-    avatar: "/images/avatar-1.jpg",
+    avatar: avatar1,
   },
   {
     name: "Devon Park",
     role: "Engineering manager",
     quote:
       "The first finance app where the dashboard loads faster than my banking app's splash screen.",
-    avatar: "/images/avatar-2.jpg",
+    avatar: avatar2,
   },
   {
     name: "Sofia Alvarez",
     role: "Small business owner",
     quote:
       "I reconcile three accounts in one view. Month-end used to take an evening; now it takes coffee.",
-    avatar: "/images/avatar-3.jpg",
+    avatar: avatar3,
   },
 ];
 
@@ -108,11 +117,14 @@ export default function LandingPage() {
             </Button>
           </a>
         </div>
-        {/* Baseline: full-resolution 3200×2000 PNG served as-is, no width/
-            height attributes (layout shift), no lazy-loading, no priority. */}
-        <img
-          src="/images/hero.png"
+        {/* Pass 1: next/image — the hero is the LCP element, so it gets
+            priority (preloaded, fetchpriority=high); static import provides
+            intrinsic dimensions; AVIF/WebP negotiated; responsive srcset. */}
+        <Image
+          src={heroImage}
           alt="FinDash dashboard overview"
+          priority
+          sizes="(max-width: 1152px) 100vw, 1104px"
           className="mt-14 w-full rounded-2xl border border-border shadow-2xl"
         />
       </section>
@@ -142,9 +154,10 @@ export default function LandingPage() {
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {FEATURES.map((feature) => (
             <Card key={feature.title} className="overflow-hidden">
-              <img
+              <Image
                 src={feature.image}
                 alt={feature.title}
+                sizes="(max-width: 768px) 100vw, 350px"
                 className="w-full object-cover"
               />
               <CardContent className="p-6">
@@ -194,9 +207,10 @@ export default function LandingPage() {
                 </Button>
               </Link>
             </div>
-            <img
-              src="/images/app-preview.png"
+            <Image
+              src={appPreviewImage}
               alt="FinDash transactions view"
+              sizes="(max-width: 1024px) 100vw, 540px"
               className="w-full rounded-2xl border border-border shadow-xl"
             />
           </div>
@@ -216,9 +230,10 @@ export default function LandingPage() {
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="mt-6 flex items-center gap-3">
-                  <img
+                  <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
+                    sizes="40px"
                     className="h-10 w-10 rounded-full object-cover"
                   />
                   <div>
