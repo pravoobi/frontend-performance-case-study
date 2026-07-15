@@ -1,0 +1,113 @@
+{
+  "v0-baseline": {
+    "measuredAt": "2026-07-15T15:22:52.943Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 67,
+          "fcpMs": 2865.8,
+          "lcpMs": 13477.1,
+          "tbtMs": 101,
+          "cls": 0.0004,
+          "speedIndexMs": 4414.2,
+          "ttfbMs": 4,
+          "jsTransferKb": 465.5,
+          "imageTransferKb": 23083,
+          "totalTransferKb": 23665.9
+        },
+        "runs": [
+          {
+            "score": 69,
+            "fcpMs": 2858.7765500000005,
+            "lcpMs": 13445.687450000001,
+            "tbtMs": 110.5,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 2875.7282176985836,
+            "ttfbMs": 4,
+            "jsTransferKb": 465.5068359375,
+            "imageTransferKb": 23082.9814453125,
+            "totalTransferKb": 23665.8974609375
+          },
+          {
+            "score": 61,
+            "fcpMs": 3070.2534,
+            "lcpMs": 13527.148299999995,
+            "tbtMs": 98,
+            "cls": 0,
+            "speedIndexMs": 7956.766040001334,
+            "ttfbMs": 5,
+            "jsTransferKb": 465.50390625,
+            "imageTransferKb": 23082.9814453125,
+            "totalTransferKb": 23665.89453125
+          },
+          {
+            "score": 67,
+            "fcpMs": 2865.7726500000003,
+            "lcpMs": 13477.070925000002,
+            "tbtMs": 101,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 4414.169491340015,
+            "ttfbMs": 3,
+            "jsTransferKb": 465.5234375,
+            "imageTransferKb": 23082.9814453125,
+            "totalTransferKb": 23665.9140625
+          }
+        ]
+      },
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 35,
+          "fcpMs": 2881.3,
+          "lcpMs": 13765.4,
+          "tbtMs": 5265,
+          "cls": 0.0001,
+          "speedIndexMs": 6284.5,
+          "ttfbMs": 3,
+          "jsTransferKb": 465.5,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2351.3
+        },
+        "runs": [
+          {
+            "score": 35,
+            "fcpMs": 2868.4428500000004,
+            "lcpMs": 13765.446750000001,
+            "tbtMs": 5265.000000000001,
+            "cls": 0.00005568479957546552,
+            "speedIndexMs": 6202.736021913681,
+            "ttfbMs": 4,
+            "jsTransferKb": 465.5,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2351.26171875
+          },
+          {
+            "score": 28,
+            "fcpMs": 5274.1296999999995,
+            "lcpMs": 13776.948600000005,
+            "tbtMs": 4718.6538,
+            "cls": 0,
+            "speedIndexMs": 8231.962830164068,
+            "ttfbMs": 3,
+            "jsTransferKb": 465.498046875,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2351.259765625
+          },
+          {
+            "score": 35,
+            "fcpMs": 2881.3495000000003,
+            "lcpMs": 13752.297999999999,
+            "tbtMs": 5492.000000000001,
+            "cls": 0.00005568479957546552,
+            "speedIndexMs": 6284.461547621442,
+            "ttfbMs": 2,
+            "jsTransferKb": 465.5048828125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2351.2666015625
+          }
+        ]
+      }
+    }
+  }
+}
