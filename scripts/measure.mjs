@@ -33,19 +33,26 @@ function collect(url, slug) {
   for (let i = 1; i <= RUNS; i++) {
     const base = path.join(outDir, `${slug}-run${i}`);
     console.log(`  run ${i}/${RUNS}...`);
-    execFileSync(
-      "npx",
-      [
-        "lighthouse",
-        url,
-        "--only-categories=performance",
-        "--output=json,html",
-        `--output-path=${base}`,
-        '--chrome-flags=--headless=new',
-        "--quiet",
-      ],
-      { stdio: "ignore", shell: process.platform === "win32" },
-    );
+    try {
+      execFileSync(
+        "npx",
+        [
+          "lighthouse",
+          url,
+          "--only-categories=performance",
+          "--output=json,html",
+          `--output-path=${base}`,
+          '--chrome-flags=--headless=new',
+          "--quiet",
+        ],
+        { stdio: "ignore", shell: process.platform === "win32" },
+      );
+    } catch (err) {
+      // chrome-launcher's temp-profile cleanup is flaky on Windows and can
+      // fail the process after the report was already written — only treat
+      // this as fatal if the report is actually missing.
+      if (!existsSync(`${base}.report.json`)) throw err;
+    }
     const report = JSON.parse(readFileSync(`${base}.report.json`, "utf8"));
     if (report.runtimeError) {
       throw new Error(`Lighthouse runtime error on ${url}: ${report.runtimeError.message}`);

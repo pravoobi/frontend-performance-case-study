@@ -1,7 +1,5 @@
-"use client";
-
-// Baseline: the entire marketing page is a client component even though
-// nothing on it needs interactivity beyond plain links.
+// Pass 2: pure Server Component — statically generated at build time; the
+// page's code and data never ship in the client bundle.
 import Link from "next/link";
 import Image from "next/image";
 import { Badge, Button, Card, CardContent } from "@practics/ui";
