@@ -563,5 +563,63 @@
         ]
       }
     }
+  },
+  "pass-6-virtualization": {
+    "measuredAt": "2026-07-15T17:31:15.528Z",
+    "pages": {
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 54,
+          "fcpMs": 1625.6,
+          "lcpMs": 14198.9,
+          "tbtMs": 660,
+          "cls": 0,
+          "speedIndexMs": 4905.6,
+          "ttfbMs": 9,
+          "jsTransferKb": 406.1,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2299.9
+        },
+        "runs": [
+          {
+            "score": 54,
+            "fcpMs": 1635.6172,
+            "lcpMs": 14198.851599999998,
+            "tbtMs": 660,
+            "cls": 0,
+            "speedIndexMs": 4932.805068069383,
+            "ttfbMs": 74,
+            "jsTransferKb": 406.0517578125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.884765625
+          },
+          {
+            "score": 50,
+            "fcpMs": 1590.3199,
+            "lcpMs": 14202.9597,
+            "tbtMs": 895.9999999999995,
+            "cls": 0,
+            "speedIndexMs": 4892.886264382717,
+            "ttfbMs": 9,
+            "jsTransferKb": 406.0625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.8955078125
+          },
+          {
+            "score": 55,
+            "fcpMs": 1625.6489,
+            "lcpMs": 14142.9467,
+            "tbtMs": 646,
+            "cls": 0,
+            "speedIndexMs": 4905.6073214449725,
+            "ttfbMs": 8,
+            "jsTransferKb": 406.068359375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.9013671875
+          }
+        ]
+      }
+    }
   }
 }
