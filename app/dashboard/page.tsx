@@ -38,6 +38,12 @@ export const metadata = {
 };
 
 export default function DashboardPage() {
+  // Pass 9 note: <link rel="preload" as="fetch"> for /api/transactions was
+  // tried here and reverted. Starting the ~MB data download at HTML-parse
+  // time made it compete with render-critical CSS/JS on a throttled
+  // connection: measured mobile LCP went 3.9s -> ~13s. Preload is for
+  // small render-critical resources, not bulk data — the skeleton +
+  // post-hydration fetch is the better trade on slow networks.
   const transactions = generateTransactions();
   const stats = computeStats(transactions);
   const monthly = monthlySeries(transactions);
