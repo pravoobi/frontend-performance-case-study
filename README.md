@@ -4,6 +4,9 @@ A banking dashboard optimized from a **deliberately unoptimized baseline**, docu
 
 The rule for every change: **measure, change one thing, measure again, write down the delta.** The starting point is preserved as the `v0-baseline` git tag, and every optimization is one commit with its numbers in the commit message.
 
+v0-baseline (un optimized before): https://frontend-performance-case-study-git-baseline-pravoobis-projects.vercel.app/
+Optimized (optimized after): https://frontend-performance-case-study-iota.vercel.app/
+
 ## Result
 
 Mobile Lighthouse, throttled, median of 3 runs. Before and after were measured back-to-back in the same session on the same machine (Lighthouse numbers on a developer machine drift with ambient load, so cross-session comparisons are not honest — see *Methodology*).
