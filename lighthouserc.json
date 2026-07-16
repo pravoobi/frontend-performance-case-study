@@ -1,0 +1,46 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "pnpm start",
+      "startServerReadyPattern": "Ready",
+      "url": ["http://localhost:3000/", "http://localhost:3000/dashboard"],
+      "numberOfRuns": 3,
+      "settings": {
+        "onlyCategories": ["performance"],
+        "chromeFlags": "--headless=new"
+      }
+    },
+    "assert": {
+      "assertMatrix": [
+        {
+          "matchingUrlPattern": "http://localhost:3000/$",
+          "assertions": {
+            "categories:performance": ["error", { "minScore": 0.85 }],
+            "largest-contentful-paint": ["error", { "maxNumericValue": 4000 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0.05 }],
+            "total-blocking-time": ["error", { "maxNumericValue": 500 }],
+            "resource-summary:script:size": [
+              "error",
+              { "maxNumericValue": 460000 }
+            ]
+          }
+        },
+        {
+          "matchingUrlPattern": "http://localhost:3000/dashboard",
+          "assertions": {
+            "categories:performance": ["error", { "minScore": 0.45 }],
+            "total-blocking-time": ["error", { "maxNumericValue": 2000 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0.05 }],
+            "resource-summary:script:size": [
+              "error",
+              { "maxNumericValue": 500000 }
+            ]
+          }
+        }
+      ]
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
