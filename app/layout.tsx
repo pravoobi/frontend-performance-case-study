@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
+import { Providers } from "@/components/Providers";
 import { WebVitals } from "@/components/WebVitals";
 
 // Pass 5: fonts are self-hosted via next/font — subsetted woff2 served
@@ -36,7 +37,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <body className="antialiased">
         <WebVitals />
-        {children}
+        <Providers>{children}</Providers>
         {/* Pass 4: the third-party scripts (stand-ins for analytics/chat
             widgets) load via next/script lazyOnload — fetched after the
             page is fully loaded and idle, off the critical path. Nothing

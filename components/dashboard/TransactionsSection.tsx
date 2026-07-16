@@ -2,8 +2,10 @@
 
 // Client island for the interactive part of the dashboard: fetches the row
 // data, owns filter state, renders the table and the detail drawer.
-import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
+import { useQuery } from "@tanstack/react-query";
+import { transactionsQuery } from "@/lib/queries";
 import {
   Card,
   CardContent,
@@ -48,22 +50,35 @@ const STATUS_OPTIONS = [
   { value: "failed", label: "Failed" },
 ];
 
+// Pass 8: skeleton rows in the table's real layout instead of a spinner —
+// the page keeps its final shape while data streams in (better perceived
+// performance, no layout jump when rows arrive).
+function TableSkeleton() {
+  return (
+    <div aria-busy="true" className="px-4 py-2">
+      {Array.from({ length: 10 }).map((_, i) => (
+        <div key={i} className="flex items-center gap-6 border-b border-border py-4">
+          <div className="h-3 w-24 animate-pulse rounded bg-muted" />
+          <div className="h-3 w-36 animate-pulse rounded bg-muted" />
+          <div className="h-5 w-20 animate-pulse rounded-full bg-muted" />
+          <div className="hidden h-3 w-36 animate-pulse rounded bg-muted sm:block" />
+          <div className="ml-auto h-3 w-20 animate-pulse rounded bg-muted" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function TransactionsSection() {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Pass 8: TanStack Query owns the fetch — request deduplication, a
+  // session-long cache (no refetch of 10k rows when navigating back),
+  // and a cache entry the landing page can pre-warm on hover.
+  const { data: transactions = [], isPending: loading } =
+    useQuery(transactionsQuery);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const [status, setStatus] = useState("all");
   const [selected, setSelected] = useState<Transaction | null>(null);
-
-  useEffect(() => {
-    fetch("/api/transactions")
-      .then((res) => res.json())
-      .then((data: Transaction[]) => {
-        setTransactions(data);
-        setLoading(false);
-      });
-  }, []);
 
   // Pass 7 (profiler-guided): typing in the search box re-ran this filter
   // over 10k rows and re-rendered the table on every keystroke.
@@ -123,9 +138,7 @@ export function TransactionsSection() {
         </CardHeader>
         <CardContent className="p-0">
           {loading ? (
-            <div className="flex h-64 items-center justify-center">
-              <div className="h-10 w-10 animate-spin rounded-full border-4 border-muted border-t-primary" />
-            </div>
+            <TableSkeleton />
           ) : (
             <TransactionsTable transactions={filtered} onSelect={setSelected} />
           )}

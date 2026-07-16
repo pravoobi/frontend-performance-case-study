@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Badge, Button, Card, CardContent } from "@practics/ui";
 import { ArrowRight, ShieldCheck, Zap, LineChart } from "lucide-react";
+import { DashboardCta } from "@/components/DashboardCta";
 import heroImage from "@/public/images/hero.png";
 import appPreviewImage from "@/public/images/app-preview.png";
 import featureInsights from "@/public/images/feature-insights.png";
@@ -85,11 +86,9 @@ export default function LandingPage() {
               Customers
             </a>
           </nav>
-          <Link href="/dashboard">
-            <Button iconRight={<ArrowRight className="h-4 w-4" />}>
-              Open dashboard
-            </Button>
-          </Link>
+          <DashboardCta iconRight={<ArrowRight className="h-4 w-4" />}>
+            Open dashboard
+          </DashboardCta>
         </div>
       </header>
 
@@ -106,9 +105,7 @@ export default function LandingPage() {
           real-time view — so you always know where you stand.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <Link href="/dashboard">
-            <Button size="lg">Get started free</Button>
-          </Link>
+          <DashboardCta size="lg">Get started free</DashboardCta>
           <a href="#preview">
             <Button size="lg" variant="outline">
               See it in action
