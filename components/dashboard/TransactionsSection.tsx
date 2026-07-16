@@ -2,9 +2,7 @@
 
 // Client island for the interactive part of the dashboard: fetches the row
 // data, owns filter state, renders the table and the detail drawer.
-// (Still naive on purpose: full 10k fetch, every row mounted, aggressive
-// re-renders — addressed in later passes.)
-import { useEffect, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import {
   Card,
@@ -67,17 +65,27 @@ export function TransactionsSection() {
       });
   }, []);
 
-  const filtered = transactions.filter((t) => {
-    if (category !== "all" && t.category !== category) return false;
-    if (status !== "all" && t.status !== status) return false;
-    if (
-      search &&
-      !t.merchant.toLowerCase().includes(search.toLowerCase()) &&
-      !t.category.toLowerCase().includes(search.toLowerCase())
-    )
-      return false;
-    return true;
-  });
+  // Pass 7 (profiler-guided): typing in the search box re-ran this filter
+  // over 10k rows and re-rendered the table on every keystroke.
+  // - useDeferredValue keeps the input responsive: the keystroke renders
+  //   immediately, the expensive filter render is deferred and interruptible.
+  // - useMemo skips the 10k-row scan entirely when an unrelated state
+  //   change (opening the drawer) re-renders this component.
+  const deferredSearch = useDeferredValue(search);
+  const filtered = useMemo(() => {
+    const needle = deferredSearch.toLowerCase();
+    return transactions.filter((t) => {
+      if (category !== "all" && t.category !== category) return false;
+      if (status !== "all" && t.status !== status) return false;
+      if (
+        needle &&
+        !t.merchant.toLowerCase().includes(needle) &&
+        !t.category.toLowerCase().includes(needle)
+      )
+        return false;
+      return true;
+    });
+  }, [transactions, category, status, deferredSearch]);
 
   return (
     <>

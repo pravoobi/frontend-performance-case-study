@@ -4,7 +4,7 @@
 // (and just around) the viewport are mounted, so 10,000 filtered rows cost
 // the same as 20. Header and rows share one grid template so columns stay
 // aligned without <table> layout.
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -82,7 +82,10 @@ const columns: ColumnDef<Transaction>[] = [
   },
 ];
 
-export function TransactionsTable({
+// Pass 7: memo() skips re-rendering the table when the parent re-renders
+// for reasons that don't change its props (e.g. drawer open/close —
+// `filtered` is memoized upstream and setSelected is identity-stable).
+export const TransactionsTable = memo(function TransactionsTable({
   transactions,
   onSelect,
 }: {
@@ -150,4 +153,4 @@ export function TransactionsTable({
       </div>
     </div>
   );
-}
+});
