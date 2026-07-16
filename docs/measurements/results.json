@@ -795,5 +795,961 @@
         ]
       }
     }
+  },
+  "sweep-v0-baseline": {
+    "measuredAt": "2026-07-16T04:25:28.887Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 63,
+          "fcpMs": 2799.5,
+          "lcpMs": 13676.3,
+          "tbtMs": 236,
+          "cls": 0,
+          "speedIndexMs": 4467.1,
+          "ttfbMs": 8,
+          "jsTransferKb": 465.5,
+          "imageTransferKb": 23083,
+          "totalTransferKb": 23665.9
+        },
+        "runs": [
+          {
+            "score": 63,
+            "fcpMs": 2805.8158000000003,
+            "lcpMs": 13756.276199999998,
+            "tbtMs": 244,
+            "cls": 0,
+            "speedIndexMs": 4467.122319979972,
+            "ttfbMs": 81,
+            "jsTransferKb": 465.5458984375,
+            "imageTransferKb": 23082.9814453125,
+            "totalTransferKb": 23665.94140625
+          },
+          {
+            "score": 60,
+            "fcpMs": 2799.5001,
+            "lcpMs": 13676.3079,
+            "tbtMs": 236,
+            "cls": 0,
+            "speedIndexMs": 6737.139542627551,
+            "ttfbMs": 6,
+            "jsTransferKb": 465.5263671875,
+            "imageTransferKb": 23082.9814453125,
+            "totalTransferKb": 23665.9189453125
+          },
+          {
+            "score": 64,
+            "fcpMs": 2797.0294000000004,
+            "lcpMs": 13632.3599,
+            "tbtMs": 228,
+            "cls": 0,
+            "speedIndexMs": 4381.9387600100135,
+            "ttfbMs": 8,
+            "jsTransferKb": 465.5478515625,
+            "imageTransferKb": 23082.9814453125,
+            "totalTransferKb": 23665.9404296875
+          }
+        ]
+      },
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 29,
+          "fcpMs": 3441.6,
+          "lcpMs": 14812.6,
+          "tbtMs": 10366,
+          "cls": 0,
+          "speedIndexMs": 11535.7,
+          "ttfbMs": 5,
+          "jsTransferKb": 465.6,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2351.3
+        },
+        "runs": [
+          {
+            "score": 29,
+            "fcpMs": 3441.5841,
+            "lcpMs": 14885.590900000005,
+            "tbtMs": 10366,
+            "cls": 0,
+            "speedIndexMs": 11535.708327229242,
+            "ttfbMs": 5,
+            "jsTransferKb": 465.5546875,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2351.3212890625
+          },
+          {
+            "score": 32,
+            "fcpMs": 2792.1745,
+            "lcpMs": 14812.5595,
+            "tbtMs": 10633.885999999999,
+            "cls": 0.00005568479957546552,
+            "speedIndexMs": 9788.467092044992,
+            "ttfbMs": 6,
+            "jsTransferKb": 465.5390625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2351.3056640625
+          },
+          {
+            "score": 26,
+            "fcpMs": 5589.429,
+            "lcpMs": 14141.586750000006,
+            "tbtMs": 7625.5275,
+            "cls": 0,
+            "speedIndexMs": 11965.723948647737,
+            "ttfbMs": 4,
+            "jsTransferKb": 465.5556640625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2351.3193359375
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-1": {
+    "measuredAt": "2026-07-16T04:29:44.698Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 64,
+          "fcpMs": 2938.3,
+          "lcpMs": 5668.3,
+          "tbtMs": 388,
+          "cls": 0,
+          "speedIndexMs": 3266.9,
+          "ttfbMs": 8,
+          "jsTransferKb": 473.1,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 808.2
+        },
+        "runs": [
+          {
+            "score": 61,
+            "fcpMs": 3852.7702,
+            "lcpMs": 5969.2139,
+            "tbtMs": 306.50000000000045,
+            "cls": 0,
+            "speedIndexMs": 4967.575431933003,
+            "ttfbMs": 73,
+            "jsTransferKb": 473.0849609375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 808.216796875
+          },
+          {
+            "score": 64,
+            "fcpMs": 2938.34015,
+            "lcpMs": 5668.26435,
+            "tbtMs": 411.5,
+            "cls": 0,
+            "speedIndexMs": 3266.85704998253,
+            "ttfbMs": 8,
+            "jsTransferKb": 473.08203125,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 808.2109375
+          },
+          {
+            "score": 65,
+            "fcpMs": 2791.08305,
+            "lcpMs": 5567.582675,
+            "tbtMs": 388,
+            "cls": 0,
+            "speedIndexMs": 3260.7909659493434,
+            "ttfbMs": 5,
+            "jsTransferKb": 473.078125,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 808.2099609375
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-2": {
+    "measuredAt": "2026-07-16T04:31:20.782Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 70,
+          "fcpMs": 2801.9,
+          "lcpMs": 5419.3,
+          "tbtMs": 226.5,
+          "cls": 0,
+          "speedIndexMs": 3231.9,
+          "ttfbMs": 8,
+          "jsTransferKb": 469.4,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 809.4
+        },
+        "runs": [
+          {
+            "score": 77,
+            "fcpMs": 2801.8510000000006,
+            "lcpMs": 4211.021000000001,
+            "tbtMs": 226.5,
+            "cls": 0,
+            "speedIndexMs": 3231.9435087484962,
+            "ttfbMs": 61,
+            "jsTransferKb": 469.375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 809.3828125
+          },
+          {
+            "score": 63,
+            "fcpMs": 5676.2027499999995,
+            "lcpMs": 6301.398999999999,
+            "tbtMs": 18.5,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 5676.2027499999995,
+            "ttfbMs": 8,
+            "jsTransferKb": 469.3818359375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 809.392578125
+          },
+          {
+            "score": 70,
+            "fcpMs": 2792.04255,
+            "lcpMs": 5419.298450000001,
+            "tbtMs": 254.5,
+            "cls": 0,
+            "speedIndexMs": 3168.2293134923148,
+            "ttfbMs": 5,
+            "jsTransferKb": 469.37109375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 809.37890625
+          }
+        ]
+      },
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 26,
+          "fcpMs": 8590.5,
+          "lcpMs": 14243.6,
+          "tbtMs": 4700,
+          "cls": 0,
+          "speedIndexMs": 10265.8,
+          "ttfbMs": 6,
+          "jsTransferKb": 469.4,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2362.9
+        },
+        "runs": [
+          {
+            "score": 26,
+            "fcpMs": 8748.743,
+            "lcpMs": 14243.612,
+            "tbtMs": 4653.202799999999,
+            "cls": 0,
+            "speedIndexMs": 10304.00814253992,
+            "ttfbMs": 6,
+            "jsTransferKb": 469.375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2362.8779296875
+          },
+          {
+            "score": 26,
+            "fcpMs": 8556.1933,
+            "lcpMs": 14248.296499999997,
+            "tbtMs": 4700,
+            "cls": 0,
+            "speedIndexMs": 10265.764097174982,
+            "ttfbMs": 6,
+            "jsTransferKb": 469.365234375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2362.8681640625
+          },
+          {
+            "score": 26,
+            "fcpMs": 8590.511999999999,
+            "lcpMs": 14220.827000000001,
+            "tbtMs": 4924.1734,
+            "cls": 0,
+            "speedIndexMs": 10260.425027181052,
+            "ttfbMs": 7,
+            "jsTransferKb": 469.37109375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2362.876953125
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-3": {
+    "measuredAt": "2026-07-16T04:34:45.001Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 73,
+          "fcpMs": 2793.3,
+          "lcpMs": 5076.8,
+          "tbtMs": 204.5,
+          "cls": 0,
+          "speedIndexMs": 3201.4,
+          "ttfbMs": 10,
+          "jsTransferKb": 397.8,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 737.9
+        },
+        "runs": [
+          {
+            "score": 70,
+            "fcpMs": 2952.366,
+            "lcpMs": 5203.745500000001,
+            "tbtMs": 253.5,
+            "cls": 0,
+            "speedIndexMs": 3359.329754489193,
+            "ttfbMs": 76,
+            "jsTransferKb": 397.84765625,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 737.90625
+          },
+          {
+            "score": 82,
+            "fcpMs": 2792.2996,
+            "lcpMs": 3977.8395499999992,
+            "tbtMs": 102,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 2792.2996,
+            "ttfbMs": 10,
+            "jsTransferKb": 397.8466796875,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 737.90234375
+          },
+          {
+            "score": 73,
+            "fcpMs": 2793.3499500000003,
+            "lcpMs": 5076.751675,
+            "tbtMs": 204.50000000000045,
+            "cls": 0,
+            "speedIndexMs": 3201.4170917072342,
+            "ttfbMs": 9,
+            "jsTransferKb": 397.849609375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 737.908203125
+          }
+        ]
+      },
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 26,
+          "fcpMs": 8062.3,
+          "lcpMs": 13911.2,
+          "tbtMs": 4738.8,
+          "cls": 0,
+          "speedIndexMs": 10078,
+          "ttfbMs": 5,
+          "jsTransferKb": 397.8,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2291.4
+        },
+        "runs": [
+          {
+            "score": 26,
+            "fcpMs": 7997.709349999999,
+            "lcpMs": 13864.04065,
+            "tbtMs": 5119.777750000001,
+            "cls": 0,
+            "speedIndexMs": 10077.968160490353,
+            "ttfbMs": 5,
+            "jsTransferKb": 397.8486328125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2291.4267578125
+          },
+          {
+            "score": 26,
+            "fcpMs": 8062.3284,
+            "lcpMs": 14048.466799999998,
+            "tbtMs": 4738.781000000001,
+            "cls": 0,
+            "speedIndexMs": 10021.605499076886,
+            "ttfbMs": 7,
+            "jsTransferKb": 397.8515625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2291.4306640625
+          },
+          {
+            "score": 26,
+            "fcpMs": 8241.8817,
+            "lcpMs": 13911.240049999997,
+            "tbtMs": 4633.5589,
+            "cls": 0,
+            "speedIndexMs": 10099.965237337849,
+            "ttfbMs": 5,
+            "jsTransferKb": 397.8330078125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2291.4091796875
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-4": {
+    "measuredAt": "2026-07-16T04:38:06.856Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 77,
+          "fcpMs": 2650.9,
+          "lcpMs": 4969.1,
+          "tbtMs": 83,
+          "cls": 0.0004,
+          "speedIndexMs": 3318.9,
+          "ttfbMs": 9,
+          "jsTransferKb": 399.4,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 739.5
+        },
+        "runs": [
+          {
+            "score": 86,
+            "fcpMs": 2661.01775,
+            "lcpMs": 3564.4056250000003,
+            "tbtMs": 86,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 2661.01775,
+            "ttfbMs": 90,
+            "jsTransferKb": 399.412109375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 739.517578125
+          },
+          {
+            "score": 76,
+            "fcpMs": 2643.3349500000004,
+            "lcpMs": 5131.85425,
+            "tbtMs": 79,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 3357.006934896355,
+            "ttfbMs": 9,
+            "jsTransferKb": 399.404296875,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 739.509765625
+          },
+          {
+            "score": 77,
+            "fcpMs": 2650.94435,
+            "lcpMs": 4969.119825,
+            "tbtMs": 83,
+            "cls": 0.0004434167846498483,
+            "speedIndexMs": 3318.863480420901,
+            "ttfbMs": 6,
+            "jsTransferKb": 399.4052734375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 739.509765625
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-5": {
+    "measuredAt": "2026-07-16T04:39:37.825Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 79,
+          "fcpMs": 772.6,
+          "lcpMs": 5418.1,
+          "tbtMs": 132,
+          "cls": 0,
+          "speedIndexMs": 2178.8,
+          "ttfbMs": 9,
+          "jsTransferKb": 399.4,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 739.7
+        },
+        "runs": [
+          {
+            "score": 78,
+            "fcpMs": 806.9838,
+            "lcpMs": 5580.19735,
+            "tbtMs": 140.5,
+            "cls": 0,
+            "speedIndexMs": 2251.90039201952,
+            "ttfbMs": 65,
+            "jsTransferKb": 399.40234375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 739.70703125
+          },
+          {
+            "score": 92,
+            "fcpMs": 772.6364000000001,
+            "lcpMs": 3300.9546,
+            "tbtMs": 100.68179999999995,
+            "cls": 0,
+            "speedIndexMs": 772.6364000000001,
+            "ttfbMs": 9,
+            "jsTransferKb": 399.400390625,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 739.705078125
+          },
+          {
+            "score": 79,
+            "fcpMs": 770.4847,
+            "lcpMs": 5418.075274999999,
+            "tbtMs": 132,
+            "cls": 0,
+            "speedIndexMs": 2178.820043974819,
+            "ttfbMs": 5,
+            "jsTransferKb": 399.3955078125,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 739.7001953125
+          }
+        ]
+      },
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 26,
+          "fcpMs": 6761.2,
+          "lcpMs": 14172.7,
+          "tbtMs": 5699.2,
+          "cls": 0,
+          "speedIndexMs": 10029.4,
+          "ttfbMs": 8,
+          "jsTransferKb": 399.4,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2293.2
+        },
+        "runs": [
+          {
+            "score": 26,
+            "fcpMs": 6761.232,
+            "lcpMs": 14172.696,
+            "tbtMs": 6111.116,
+            "cls": 0,
+            "speedIndexMs": 10029.373722928103,
+            "ttfbMs": 8,
+            "jsTransferKb": 399.400390625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2293.2177734375
+          },
+          {
+            "score": 26,
+            "fcpMs": 7030.4567,
+            "lcpMs": 14151.3701,
+            "tbtMs": 5699.22835,
+            "cls": 0,
+            "speedIndexMs": 10049.025038338092,
+            "ttfbMs": 8,
+            "jsTransferKb": 399.412109375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2293.2294921875
+          },
+          {
+            "score": 26,
+            "fcpMs": 6561.5586,
+            "lcpMs": 14241.1954,
+            "tbtMs": 5698.7793,
+            "cls": 0,
+            "speedIndexMs": 9742.847214229536,
+            "ttfbMs": 4,
+            "jsTransferKb": 399.3984375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2293.2158203125
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-6": {
+    "measuredAt": "2026-07-16T04:43:12.765Z",
+    "pages": {
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 42,
+          "fcpMs": 1756.4,
+          "lcpMs": 14833.1,
+          "tbtMs": 2191,
+          "cls": 0,
+          "speedIndexMs": 5246.3,
+          "ttfbMs": 14,
+          "jsTransferKb": 406.1,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2299.9
+        },
+        "runs": [
+          {
+            "score": 41,
+            "fcpMs": 1756.3676,
+            "lcpMs": 15060.919000000002,
+            "tbtMs": 2211.0000000000005,
+            "cls": 0,
+            "speedIndexMs": 5466.637816351213,
+            "ttfbMs": 175,
+            "jsTransferKb": 406.1025390625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.9404296875
+          },
+          {
+            "score": 43,
+            "fcpMs": 1664.6592,
+            "lcpMs": 14801.8596,
+            "tbtMs": 2089.000000000001,
+            "cls": 0,
+            "speedIndexMs": 5127.79315790637,
+            "ttfbMs": 14,
+            "jsTransferKb": 406.1142578125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.9521484375
+          },
+          {
+            "score": 42,
+            "fcpMs": 1756.3801,
+            "lcpMs": 14833.1403,
+            "tbtMs": 2191.0000000000014,
+            "cls": 0,
+            "speedIndexMs": 5246.259947896711,
+            "ttfbMs": 9,
+            "jsTransferKb": 406.0986328125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.9365234375
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-7": {
+    "measuredAt": "2026-07-16T04:45:07.413Z",
+    "pages": {
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 42,
+          "fcpMs": 1725.3,
+          "lcpMs": 14629.5,
+          "tbtMs": 2095,
+          "cls": 0,
+          "speedIndexMs": 5192.6,
+          "ttfbMs": 32,
+          "jsTransferKb": 406.1,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2300
+        },
+        "runs": [
+          {
+            "score": 61,
+            "fcpMs": 1044.9032499999998,
+            "lcpMs": 3753.5162499999997,
+            "tbtMs": 2095.0000000000005,
+            "cls": 0,
+            "speedIndexMs": 2818.5544042314305,
+            "ttfbMs": 158,
+            "jsTransferKb": 406.14453125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.97265625
+          },
+          {
+            "score": 42,
+            "fcpMs": 1725.3071,
+            "lcpMs": 14697.921299999998,
+            "tbtMs": 2050,
+            "cls": 0,
+            "speedIndexMs": 5301.386905063543,
+            "ttfbMs": 32,
+            "jsTransferKb": 406.1298828125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.9580078125
+          },
+          {
+            "score": 42,
+            "fcpMs": 1732.154,
+            "lcpMs": 14629.462,
+            "tbtMs": 2145.9999999999995,
+            "cls": 0,
+            "speedIndexMs": 5192.60023835406,
+            "ttfbMs": 14,
+            "jsTransferKb": 406.1513671875,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2299.9794921875
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-8": {
+    "measuredAt": "2026-07-16T04:47:00.109Z",
+    "pages": {
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 40,
+          "fcpMs": 1884.4,
+          "lcpMs": 13827.2,
+          "tbtMs": 2607,
+          "cls": 0,
+          "speedIndexMs": 5663.4,
+          "ttfbMs": 29,
+          "jsTransferKb": 416.7,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2310.7
+        },
+        "runs": [
+          {
+            "score": 40,
+            "fcpMs": 1936.6599999999999,
+            "lcpMs": 14996.98,
+            "tbtMs": 2606.9999999999995,
+            "cls": 0,
+            "speedIndexMs": 5871.126381737406,
+            "ttfbMs": 153,
+            "jsTransferKb": 416.6796875,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2310.6767578125
+          },
+          {
+            "score": 41,
+            "fcpMs": 1884.3505,
+            "lcpMs": 13734.876250000001,
+            "tbtMs": 2386.0000000000005,
+            "cls": 0,
+            "speedIndexMs": 5394.09082039755,
+            "ttfbMs": 17,
+            "jsTransferKb": 416.6748046875,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2310.671875
+          },
+          {
+            "score": 40,
+            "fcpMs": 1826.0611,
+            "lcpMs": 13827.15275,
+            "tbtMs": 2659.0000000000005,
+            "cls": 0,
+            "speedIndexMs": 5663.439490684712,
+            "ttfbMs": 29,
+            "jsTransferKb": 416.6806640625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2310.677734375
+          }
+        ]
+      }
+    }
+  },
+  "sweep-pass-9": {
+    "measuredAt": "2026-07-16T04:48:52.437Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 67,
+          "fcpMs": 953,
+          "lcpMs": 4849.5,
+          "tbtMs": 670,
+          "cls": 0,
+          "speedIndexMs": 2571.6,
+          "ttfbMs": 27,
+          "jsTransferKb": 416.7,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 757.1
+        },
+        "runs": [
+          {
+            "score": 72,
+            "fcpMs": 953.22335,
+            "lcpMs": 3690.6700499999993,
+            "tbtMs": 717.5,
+            "cls": 0,
+            "speedIndexMs": 1697.6506599682234,
+            "ttfbMs": 148,
+            "jsTransferKb": 416.6689453125,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 757.0576171875
+          },
+          {
+            "score": 62,
+            "fcpMs": 903.59225,
+            "lcpMs": 5754.349624999999,
+            "tbtMs": 669.9999999999997,
+            "cls": 0,
+            "speedIndexMs": 2637.4057000373837,
+            "ttfbMs": 27,
+            "jsTransferKb": 416.6826171875,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 757.0712890625
+          },
+          {
+            "score": 67,
+            "fcpMs": 952.9501,
+            "lcpMs": 4849.4699,
+            "tbtMs": 603.5,
+            "cls": 0,
+            "speedIndexMs": 2571.5530399666213,
+            "ttfbMs": 10,
+            "jsTransferKb": 416.677734375,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 757.06640625
+          }
+        ]
+      },
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 41,
+          "fcpMs": 1833.2,
+          "lcpMs": 14825.5,
+          "tbtMs": 2324,
+          "cls": 0,
+          "speedIndexMs": 5529.5,
+          "ttfbMs": 10,
+          "jsTransferKb": 416.7,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2310.7
+        },
+        "runs": [
+          {
+            "score": 41,
+            "fcpMs": 1867.5708,
+            "lcpMs": 14864.427,
+            "tbtMs": 2324,
+            "cls": 0,
+            "speedIndexMs": 5529.451619537796,
+            "ttfbMs": 10,
+            "jsTransferKb": 416.68359375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2310.74609375
+          },
+          {
+            "score": 41,
+            "fcpMs": 1833.212,
+            "lcpMs": 14825.529999999999,
+            "tbtMs": 2337.9999999999995,
+            "cls": 0,
+            "speedIndexMs": 5549.35289864568,
+            "ttfbMs": 12,
+            "jsTransferKb": 416.6796875,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2310.7421875
+          },
+          {
+            "score": 42,
+            "fcpMs": 1833.1681,
+            "lcpMs": 14725.42025,
+            "tbtMs": 2061,
+            "cls": 0,
+            "speedIndexMs": 5284.958848103428,
+            "ttfbMs": 9,
+            "jsTransferKb": 416.673828125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2310.736328125
+          }
+        ]
+      }
+    }
+  },
+  "final": {
+    "measuredAt": "2026-07-16T04:57:16.112Z",
+    "pages": {
+      "landing": {
+        "url": "http://localhost:3000/",
+        "medians": {
+          "score": 88,
+          "fcpMs": 769,
+          "lcpMs": 3329.5,
+          "tbtMs": 239.5,
+          "cls": 0,
+          "speedIndexMs": 832.5,
+          "ttfbMs": 9,
+          "jsTransferKb": 417.3,
+          "imageTransferKb": 216.2,
+          "totalTransferKb": 757.7
+        },
+        "runs": [
+          {
+            "score": 73,
+            "fcpMs": 806.6429,
+            "lcpMs": 5710.678849999998,
+            "tbtMs": 282.5,
+            "cls": 0,
+            "speedIndexMs": 2252.847063998852,
+            "ttfbMs": 82,
+            "jsTransferKb": 417.2578125,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 757.67578125
+          },
+          {
+            "score": 92,
+            "fcpMs": 768.2954,
+            "lcpMs": 3321.4431,
+            "tbtMs": 107,
+            "cls": 0,
+            "speedIndexMs": 768.2954,
+            "ttfbMs": 9,
+            "jsTransferKb": 417.2578125,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 757.67578125
+          },
+          {
+            "score": 88,
+            "fcpMs": 769.0295000000001,
+            "lcpMs": 3329.54425,
+            "tbtMs": 239.5,
+            "cls": 0,
+            "speedIndexMs": 832.4936399591447,
+            "ttfbMs": 4,
+            "jsTransferKb": 417.25,
+            "imageTransferKb": 216.1865234375,
+            "totalTransferKb": 757.66796875
+          }
+        ]
+      },
+      "dashboard": {
+        "url": "http://localhost:3000/dashboard",
+        "medians": {
+          "score": 54,
+          "fcpMs": 1739.5,
+          "lcpMs": 14230.9,
+          "tbtMs": 695,
+          "cls": 0,
+          "speedIndexMs": 3590.7,
+          "ttfbMs": 6,
+          "jsTransferKb": 417.3,
+          "imageTransferKb": 0,
+          "totalTransferKb": 2311.3
+        },
+        "runs": [
+          {
+            "score": 53,
+            "fcpMs": 1739.5497,
+            "lcpMs": 14302.374249999999,
+            "tbtMs": 819.9999999999995,
+            "cls": 0,
+            "speedIndexMs": 3590.6881036752457,
+            "ttfbMs": 4,
+            "jsTransferKb": 417.251953125,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2311.30859375
+          },
+          {
+            "score": 58,
+            "fcpMs": 1736.376,
+            "lcpMs": 14230.94,
+            "tbtMs": 584,
+            "cls": 0,
+            "speedIndexMs": 3529.4555913401327,
+            "ttfbMs": 6,
+            "jsTransferKb": 417.265625,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2311.322265625
+          },
+          {
+            "score": 54,
+            "fcpMs": 1746.6881000000003,
+            "lcpMs": 14217.720250000002,
+            "tbtMs": 695,
+            "cls": 0,
+            "speedIndexMs": 4926.617908904991,
+            "ttfbMs": 6,
+            "jsTransferKb": 417.24609375,
+            "imageTransferKb": 0,
+            "totalTransferKb": 2311.302734375
+          }
+        ]
+      }
+    }
   }
 }
