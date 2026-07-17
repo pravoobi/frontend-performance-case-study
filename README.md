@@ -37,6 +37,17 @@ Mobile Lighthouse, throttled, median of 3 runs. Before and after were measured b
 
 CLS is ~0 in both states: the baseline's undimensioned images sit below the mobile fold, so their late load never shifted visible content. Explicit dimensions via `next/image` lock that in rather than fix a measured problem.
 
+### Independently verifiable: PageSpeed Insights on the live URLs
+
+Run by Google's infrastructure (desktop preset) against the deployed Vercel URLs — anyone can reproduce these by pasting the demo links into [pagespeed.web.dev](https://pagespeed.web.dev). Desktop scores: landing **66 → 99**, dashboard **44 → 94**.
+
+| | Baseline | Optimized |
+|---|---|---|
+| **Landing** | ![PageSpeed — baseline landing: 66, LCP 15.2s](docs/screenshots/pagespeed-landing-before.png) | ![PageSpeed — optimized landing: 99, LCP 0.6s](docs/screenshots/pagespeed-landing-after.png) |
+| **Dashboard** | ![PageSpeed — baseline dashboard: 44, TBT 3,320ms](docs/screenshots/pagespeed-dashboard-before.png) | ![PageSpeed — optimized dashboard: 94](docs/screenshots/pagespeed-dashboard-after.png) |
+
+(Desktop is less punishing than the mobile-throttled runs in the tables above — even so, the baseline landing's 23MB hero pushes desktop LCP to 15.2s.)
+
 ## Stack
 
 Next.js (App Router) · TypeScript · Tailwind CSS v4 · [@practics/ui](https://www.npmjs.com/package/@practics/ui) (my own component library) · TanStack Table + Virtual + Query · Recharts · web-vitals
