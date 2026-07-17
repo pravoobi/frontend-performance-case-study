@@ -4,8 +4,7 @@ A banking dashboard optimized from a **deliberately unoptimized baseline**, docu
 
 The rule for every change: **measure, change one thing, measure again, write down the delta.** The starting point is preserved as the `v0-baseline` git tag, and every optimization is one commit with its numbers in the commit message.
 
-v0-baseline (un optimized before): https://frontend-performance-case-study-git-baseline-pravoobis-projects.vercel.app/
-Optimized (optimized after): https://frontend-performance-case-study-iota.vercel.app/
+**Live demo:** [optimized (after)](https://frontend-performance-case-study-iota.vercel.app/) · [`v0-baseline` (before — loads 23MB on purpose)](https://frontend-performance-case-study-git-baseline-pravoobis-projects.vercel.app/)
 
 ## Result
 
